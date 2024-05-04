@@ -13,9 +13,12 @@ Security: Emphasis is placed on data security and integrity, with measures imple
 **Technologies Used:**
 
 Groovy: The primary programming language used for development, providing the flexibility and productivity of scripting languages along with the robustness of Java.
+
 Grails: A high-productivity web framework for the Groovy language, enabling rapid development of web applications with built-in features such as ORM, scaffolding, and plugins.
+
 HTML/CSS/JavaScript: Front-end technologies used for creating the user interface and enhancing user interaction.
-MySQL/PostgreSQL: Relational database management systems utilized for storing and managing application data.
+
+MySQL: Relational database management systems utilized for storing and managing application data.
 Purpose:
 
 The Village Banking Management System Web Application aims to streamline financial operations within a village banking context, offering a user-friendly platform for users to manage their accounts, conduct transactions, and access financial services efficiently. It serves as an educational project demonstrating the capabilities of Groovy and Grails in developing robust web applications.
