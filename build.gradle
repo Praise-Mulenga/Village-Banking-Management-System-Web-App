@@ -46,10 +46,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-logging")
     implementation("org.springframework.boot:spring-boot-starter-tomcat")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+   // implementation ('org.springframework.boot:spring-boot-starter-security')  just added
     compileOnly("io.micronaut:micronaut-inject-groovy")
     console("org.grails:grails-console")
     runtimeOnly("com.bertramlabs.plugins:asset-pipeline-grails:4.3.0")
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("mysql:mysql-connector-java:8.0.19")  //inserted - testing
     runtimeOnly("org.apache.tomcat:tomcat-jdbc")
     runtimeOnly("org.fusesource.jansi:jansi:1.18")
     testImplementation("io.micronaut:micronaut-inject-groovy")
@@ -85,7 +87,7 @@ tasks.withType(Test) {
 webdriverBinaries {
     chromedriver '122.0.6260.0'
     geckodriver '0.33.0'
-  //  iedriverserver '3.141.59'
+    //iedriverserver '3.141.59'
     edgedriver '110.0.1587.57'
 }
 assets {

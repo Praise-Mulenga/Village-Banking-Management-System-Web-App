@@ -1,0 +1,979 @@
+﻿/*Theme color replace all #185670 --------------------------------*/
+/* Switching between placeholder and labels-----------------------*/
+form#the-form label span:first-child {
+	display: none; /*Remove to display labels*/
+}
+::-webkit-input-placeholder {
+   opacity: 1; /*change to 0 to hide placeholders. Display none does not work*/
+   color: #aaa;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   opacity: 1; /*change to 0 to hide placeholders. Display none does not work*/
+   color: #aaa;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   opacity: 1; /*change to 0 to hide placeholders. Display none does not work*/
+   color: #aaa;
+}
+
+:-ms-input-placeholder {  
+   color: #aaa;/*change to transparent to hide placeholders. Display none does not work*/
+}
+body.view-original form#the-form label span:first-child {
+	display: inline-block;
+}
+body.view-original form#the-form label span:first-child, form#the-form label p:first-child, form#the-form label strong:first-child {
+	width: 100%;
+}
+form#the-form input, form#the-form select, form#the-form textarea {
+    font-size: 0.9375em;
+    line-height: 1.2em;
+    height: 2.4em;
+    color: #333333;
+    padding: 0.5em 0.5em;
+    border: 1px solid;
+    border-color: #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: 0 -4px 0 0;
+    border-radius: 0;
+    transition: all 0.25s ease;
+    outline: none;
+}
+form#the-form textarea {
+	width: 100%;
+	min-height: 7em;
+	resize: vertical;
+}
+form#the-form header::after, form#the-form div::after, form#the-form section::after, form#the-form ul::after, form#the-form ol::after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	clear: both;
+}
+form#the-form > div, form#the-form > section {
+	clear: both;
+}
+form#the-form > div {
+	padding: 0.5em 0 0 0;
+}
+form#the-form div {
+	clear: both;
+}
+form#the-form > section, form#the-form header {
+	padding: 0 0 1em 0;
+}
+form#the-form > section:last-child {
+	padding-bottom: 2em;
+}
+form#the-form h1, form#the-form h2, form#the-form h3, form#the-form h4 {
+	clear: both;
+	display: inline-block;
+	width: 100%;
+}
+form#the-form label {
+	display: block;
+	float: left;
+	padding: 0.5em 0 0 0;
+	width: 100%;
+	box-sizing: border-box;
+	transition:  opacity 0.25s ease, padding 0.5s ease;
+	position: relative;
+}
+form#the-form label:hover span, form#the-form label:hover p, form#the-form label:hover strong {
+	color: #185670;
+}
+form#the-form label span {
+	line-height: 1.3em;
+	display: inline-block;
+}
+form#the-form label span, form#the-form label + p, form#the-form label strong {
+	height: 100%;
+	display: inline-block;
+	margin-right: -4px;
+	transition: all 0.25s ease;
+	cursor: pointer;
+}
+form#the-form label + p {
+	cursor: default;
+}
+form#the-form label strong {
+	text-align: right;
+	font-size: 1em;
+	font-weight: 700;
+}
+form#the-form label + p {
+	clear: both;
+}
+form#the-form label span:first-child, form#the-form label p:first-child, form#the-form label strong:first-child {
+	width: 100%;
+	/* margin: 1em 0 0.25em 0; */
+}
+form#the-form ul label span:first-child {
+	width: auto;
+}
+form#the-form ul li label strong, form#the-form ul li label strong:first-child {
+	width: 100%;
+}
+form#the-form label > *:last-child {
+	width: 100%;
+	vertical-align: top;
+}
+form#the-form label.stacked > *:last-child {
+	width: 65.625%;
+}
+form#the-form label > *:first-child:not(input) {
+	padding-right: 3.125%;
+}
+form#the-form label span:last-child {
+	width: auto;
+	display: inline-block;
+}
+form#the-form .placeholder:not([readonly]), form#the-form .placeholder:focus {
+	color: #aaa;
+}
+form#the-form .placeholder option {
+	color: #666;
+}
+form#the-form input:focus, form#the-form select:focus, form#the-form textarea:focus, form#the-form .sbHolder:focus, form#the-form a.sbFocus:hover, form#the-form .sbHolder:hover .sbSelector {
+	background-color: #f2f2f2;
+	color: #333;
+}
+form#the-form select {
+	background-image: url(../images/select.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	color: #333;
+	padding-right: 2em;
+}
+form#the-form select option {
+	padding: 0.5em 1em;
+}
+form#the-form select option:first-child {
+	display: none;
+}
+form#the-form select:focus option {
+	background: #fff;
+}
+form#the-form select::-ms-expand {
+	display: none;
+}
+form#the-form select::-ms-value {
+	background: none;
+	color: #666;
+}
+form#the-form select > option:hover {
+	background-color: #ccc;
+}
+form#the-form input:first-child {
+	margin-left: 0px;
+}
+
+/* Duplicate ----------------------------------------------*/
+form#the-form section {
+	counter-reset: duplicate-div;
+}
+form#the-form section > div h3::after { /*Change h3 to chosen incremented tag ------------------------------*/
+	content: counter(duplicate-div, decimal);
+	counter-increment: duplicate-div;
+	padding-left: 0.25em;
+}
+form#the-form a[data-duplicate], form#the-form [data-duplicate], form#the-form a[data-remove], form#the-form [data-remove] {
+	display: inline-block;
+	margin: 1em 0.5em 0 0;
+	clear: both;
+	width: 1.75em;
+	height: 1.75em;
+	border-radius: 0;
+	color: #fff;
+	text-decoration: none;
+	line-height: 1.75em;
+	text-align: center;
+	font-size: 0.875em;
+	background-color: #185670;
+	border: 1px solid;
+    border-color: transparent;
+    font-weight: normal;
+	transition: all 0.25s ease;
+	font-family: "FontAwesome";
+	cursor: pointer;
+	position: relative;
+}
+form#the-form a[data-duplicate] span {
+	content: attr(title);
+	display: block;
+	max-width: 0px;
+	width: auto;
+	position: absolute;
+	background-color: #185670;
+	white-space: nowrap;
+	top: 0px;
+	left: 2.5em;
+	line-height: inherit;
+	font-family: Arial, helvetica, verdana, sans-serif;
+	font-weight: 700;
+	padding: 0px;
+	height: inherit;
+	border-radius: inherit;
+	transition: max-width 0.35s ease, padding 0.5s ease;
+	overflow: hidden;
+}
+form#the-form a[data-duplicate]:hover span {
+	animation-name: showspan;
+	animation-duration: 0.35s;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+}
+@keyframes showspan {
+	0%{
+		max-width: 0px;
+		padding: 0px;
+	}
+	100%{
+		max-width: 500px;
+		padding: 0px 1em;
+	}
+}
+form#the-form [data-duplicate]:hover, form#the-form [data-remove]:hover{
+	color: #fff;
+}
+form#the-form .new-duplicate {
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 1s ease-in-out, padding 1s ease-in-out, margin 1s ease-in-out;
+}
+form#the-form .new-duplicate.active {
+	overflow: visible;
+}
+/* End Duplicate -----------------------------------------------*/
+/* Columns --------------------------------------------------------------------*/
+form#the-form div.column {
+	clear: none;
+	float: left;
+	padding-bottom: 1em;
+	margin-right: 3.125%;
+}
+form#the-form div.column > *:first-child:not(label) {
+	padding-top: 3em;
+}
+form#the-form ul + label {
+	clear: both;
+}
+form#the-form .gap {
+	margin-top: 2.5em;
+}
+form#the-form label.one-third, form#the-form label.two-thirds, form#the-form label.one-fourth, form#the-form label.three-fourths, form#the-form label.one-half {
+	margin-right: 3.125%;
+}
+form#the-form .last, form#the-form label.last {
+	margin-right: 0px;
+}
+form#the-form .last + * {
+	clear: both;
+}
+form#the-form .one-third, form#the-form label > *.one-third, form#the-form label span.one-third, form#the-form label strong.one-third {
+	width: 31.25%;
+}
+form#the-form .two-thirds, form#the-form label > *.two-thirds, form#the-form label span.two-thirds, form#the-form label strong.two-thirds {
+	width: 65.625%;
+}
+form#the-form .one-fourth, form#the-form label > *.one-fourth, form#the-form label span.one-fourth, form#the-form label strong.one-fourth {
+	width: 22.65625%;
+}
+form#the-form .one-half, form#the-form label > *.one-half, form#the-form label span.one-half, form#the-form label strong.one-half {
+	width: 48.4375%;
+}
+form#the-form .three-fourths, form#the-form label > *.three-fourths, form#the-form label span.three-fourths, form#the-form label strong.three-fourths {
+	width: 74.21875%;
+}
+form#the-form .one-half {
+	width: 48.4375%;
+}
+form#the-form .one-fourth {
+	width: 22.65625%;
+}
+form#the-form ul .one-third {
+	width: 34.375%;
+}
+form#the-form ul .one-third:last-child {
+	width: 31.25%;
+}
+form#the-form ul .two-thirds {
+	width: 69.79166%;
+}
+form#the-form ul .two-thirds:last-child {
+	width: 63.54166%;
+}
+form#the-form ul .one-half {
+	width: 51.5625%;
+}
+form#the-form ul .one-half:last-child {
+	width: 48.4375%;
+}
+form#the-form ul .one-fourth {
+	width: 25.78125%;
+}
+form#the-form ul .one-fourth:last-child {
+	width: 22.65625%;
+}
+form#the-form ul .three-fourths {
+	width: 77.34375%;
+}
+form#the-form ul .three-fourths:last-child {
+	width: 74.21875%;
+}
+/* End Columns --------------------------------------------------------------------*/
+/* Validation --------------------------------------------------------------------*/
+form#the-form .required {
+	position: relative;
+}
+form#the-form .required::before, form#the-form ul[required]::before {
+	content: "*";
+	color: #185670;
+	position: absolute;
+	left: -0.625em;
+	transition: all 0.25s ease;
+	font-size: 16px;
+	top: 0;
+}
+form#the-form ul.required::before, form#the-form ul[required]::before {
+	top: 0.5em;
+}
+form#the-form h4 + ul.required::before, form#the-form h4 + ul[required]::before {
+	top: -1em;
+}
+form#the-form h3 + ul.required::before, form#the-form h3 + ul[required]::before {
+	top: -1.25em;
+}
+form#the-form ul[required] {
+	position: relative;
+}
+form#the-form h4.disabled + ul.required::before, form#the-form h4[disabled] + ul.required::before, form#the-form h4.disabled.required::before, form#the-form h4[disabled].required::before {
+	display: none;
+}
+
+form#the-form label.required::before {
+	top: 0.75em;
+}
+form#the-form ul li label.invalid {
+	padding-bottom: 3em;
+}
+form#the-form .invalid input, form#the-form .invalid select, form#the-form .invalid textarea {
+	border-color: #185670;
+	z-index: 1000;
+	position: relative;
+}
+form#the-form .invalid input:focus, form#the-form .invalid select:focus, form#the-form .invalid textarea:focus {
+	background-color: #fff;
+}
+form#the-form .invalid input[type=radio] + span, form#the-form .invalid input[type=checkbox] + span {
+	z-index: 1000;
+	color: #000;
+	text-shadow: 0px 10px 22px rgba(0,0,0,0.25);
+}
+form#the-form label.invalid:hover input[type=radio] + span, form#the-form label.invalid:hover input[type=checkbox] + span {
+	color: #185670;
+}
+form#the-form .invalid input[type=radio] + span::before, form#the-form .invalid input[type=checkbox] + span::before {
+	border-color: #185670;
+	z-index: 1000;
+}
+form#the-form .invalid input::-webkit-input-placeholder {
+	color: #666;
+}
+form#the-form label.required::after, form#the-form li:first-child label::after, form#the-form label[data-invalid-msg]::after {
+	background-color: #185670;
+	content: "Please fill out this field.";
+	float: left;
+	clear: both;
+	color: #fff;
+	z-index: 10000;
+	border-radius: 0;
+	font-size: 0.875em;
+	white-space: nowrap;
+	transition: all 0.5s ease;
+	overflow: hidden;
+	line-height: 1.5em;
+	text-align: center;
+	max-height: 0px;
+}
+form#the-form li label::after {
+	position: absolute;
+	top: 2.875em;
+	left: 0;
+}
+form#the-form li:first-child label::after {
+	content: "Please choose an option.";
+}
+form#the-form label[data-invalid-msg]::after {
+	content: attr(data-invalid-msg);
+	
+}
+form#the-form label.invalid::after, form#the-form li:first-child label.invalid::after {
+	max-height: 3em;
+	padding: 0.5em 1em;
+}
+form#the-form .disabled {
+	opacity: 0.3;
+	background-color: #fff;
+}
+form#the-form label:hover span.disabled, form#the-form label:hover strong.disabled, form#the-form label:hover p.disabled {
+	cursor: default;
+	color: #666;
+}
+form#the-form label:hover span.disabled::before {
+	cursor: default;
+}
+form#the-form [data-duplicate].disabled, form#the-form [data-remove].disabled {
+	cursor: default;
+}
+form#the-form [data-duplicate].disabled span {
+	display: none;
+}
+form#the-form :disabled {
+	background-color: transparent;
+	pointer-events: none;
+}
+form#the-form input[type=submit]:disabled {
+    background-color: Gray;
+    cursor: default;
+}
+input[type=submit]:disabled,
+input[type=reset]:disabled,
+button[type=submit]:disabled,
+button[type=reset]:disabled,
+input[type=submit]:disabled:hover,
+input[type=reset]:disabled:hover,
+button[type=submit]:disabled:hover,
+button[type=reset]:disabled:hover {
+	background-color: #ccc;
+	opacity: 0.3;
+	pointer-events: none;
+}
+/* Validation End-------------------------------------------------*/
+/* Collapsed ----------------------------------------------------------------*/
+form#the-form .collapsed {
+	max-height: 0px;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+form#the-form .collapsed.animate {
+	transition: all 1s ease;
+}
+form#the-form .collapsed.active {
+	overflow: visible;
+}
+form#the-form ul li.collapsed, form#the-form .table ul li.collapsed {
+	display: none;
+}
+form#the-form ul li.collapsed.active {
+	display: list-item;
+}
+form#the-form section.collapsed.pad {
+	padding: 0 0 4em 0;
+}
+/* Radios And Checkboxes --------------------------------------------------------*/
+form#the-form input[type=radio], form#the-form input[type=checkbox] {
+	width: auto;
+	border: none;
+	opacity: 0;
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	left: -100%;
+}
+form#the-form input[type=radio] + span, form#the-form input[type=checkbox] + span {
+	position: relative;
+	float: left;
+	padding-top: 0.5em;
+}
+form#the-form input[type=radio] + span::before, form#the-form input[type=checkbox] + span::before {
+	content: "";
+	display: inline-block;
+	width: 1.125em;
+	vertical-align: text-top;
+	height: 1.125em;
+	left: 0px;
+	background-color: #fff;
+	border: 1px solid;
+	border-color: #ccc;
+	border-radius: 5.625em;
+	box-sizing: border-box;
+	font-family: "FontAwesome";
+	font-size: 1em;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	transition: all 0.25s ease;
+	cursor: pointer;
+	margin-right: 0.75em;
+}
+form#the-form input[type=checkbox] + span::before {
+	border-radius: 0;
+}
+form#the-form input[type=radio]:checked + span::before {
+	background-color: #185670;
+	border-color: transparent;
+}
+form#the-form input[type=checkbox]:checked + span::before {
+	content:"\f00c";
+	background-color: #185670;
+	border-color: transparent;
+}
+form#the-form input[type=checkbox]:not([disabled]):hover + span::before, form#the-form input[type=radio]:not([disabled]):hover + span::before {
+	border-color: #185670;
+}
+form#the-form input[type=submit], form#the-form input[type=reset], form#the-form button[type=submit], form#the-form button[type=reset] {
+	border: none;
+}
+form#the-form input[type=submit]:focus, form#the-form input[type=reset]:focus, form#the-form button[type=submit]:focus, form#the-form button[type=reset]:focus,
+form#the-form input[type=submit]:active, form#the-form input[type=reset]:active, form#the-form button[type=submit]:active, form#the-form button[type=reset]:active {
+	outline: none;
+} 
+form#the-form [data-duplicate]:hover, form#the-form [data-remove]:hover, form#the-form [data-duplicate].disabled, form#the-form [data-remove].disabled {
+	background-color: #666;
+}
+form#the-form button[type=submit] i {
+	font-style: normal;
+	font-family: "fontAwesome";
+	padding-right: 0.75em;
+}
+/* Tables --------------------------------------------------------------------------------*/
+form#the-form .table {
+	display: table;
+	width: 100%;
+	padding-top: 0px;
+}
+form#the-form .table ul {
+	display: table-row;
+}
+form#the-form .table ul li label {
+	width: 100%;
+	padding: 0px;
+}
+form#the-form .table ul li label input, form#the-form .table ul li label select, form#the-form .table ul li label textarea, form#the-form .table ul li label input:last-child {
+	margin: 0px;
+	width: 100%;
+}
+form#the-form .table ul li::before {
+	display: none;
+}
+form#the-form .table ul li.collapsed.active {
+	display: table-cell;
+}
+form#the-form .table ul:hover {
+	color: #185670;
+}
+form#the-form .table ul li {
+	display: table-cell;
+	padding: 0.25em 3.125% 0.25em 0px;
+	vertical-align: middle;
+	text-indent: 0;
+	width: auto;
+}
+form#the-form .table ul li:last-child {
+	padding-right: 0px;
+}
+/* End tables ----------------------------------------------------------------------------------------*/
+/* Lists ---------------------------------------------------------------------------------------------*/
+form#the-form ul, form#the-form ol {
+	clear: both;
+	list-style: none;
+}
+form#the-form ul li label {
+	margin-top: 0px;
+	padding: 0 0 0.5em 0;
+}
+form#the-form li input, form#the-form li label > input:last-child, form#the-form li label > input, form#the-form li select, form#the-form li textarea, form#the-form li label {
+	width: 100%;
+	margin: 0px;
+}
+form#the-form li label {
+	padding: 0px;
+	cursor: pointer;
+}
+form#the-form ul.vertical, form#the-form ul.horizontal {
+	padding: 0;
+	margin: 0;
+}
+form#the-form ul.vertical li {
+	text-indent: 0;
+}
+form#the-form ul.vertical li::before {
+	display: none;
+}
+form#the-form ul.horizontal:hover {
+	color: #666;
+}
+form#the-form ul.horizontal li {
+	display: inline-block;
+	padding: 0 2em 0 0;
+	vertical-align: top;
+	text-indent: 0;
+}
+form#the-form ul.horizontal li:before {
+	display: none;
+}
+form#the-form ul.horizontal li:first-child {
+	margin-left: 0px;
+}
+form#the-form ul.horizontal.column {
+	width: 100%;
+}
+form#the-form ul.horizontal.column li {
+	width: 48.4375%;
+	padding: 0px;
+	margin-right: 3.125%;
+}
+form#the-form ul.horizontal.column li:nth-child(2n) {
+	margin-right: 0px;
+}
+/*Date Picker---------------------------------------------*/
+/*! jQuery UI - v1.11.4 - 2015-03-11
+* http://jqueryui.com
+* Includes: core.css, accordion.css, autocomplete.css, button.css, datepicker.css, dialog.css, draggable.css, menu.css, progressbar.css, resizable.css, selectable.css, selectmenu.css, slider.css, sortable.css, spinner.css, tabs.css, tooltip.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana%2CArial%2Csans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=cccccc&bgTextureHeader=highlight_soft&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=e6e6e6&bgTextureDefault=glass&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=666&iconColorDefault=888888&bgColorHover=dadada&bgTextureHover=glass&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=fbf9ee&bgTextureHighlight=glass&bgImgOpacityHighlight=55&borderColorHighlight=fcefa1&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=glass&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+* Copyright 2015 jQuery Foundation and other contributors; Licensed MIT */
+
+/* Layout helpers
+----------------------------------*/
+
+#ui-datepicker-div {
+	width: 420px;
+	box-sizing: border-box;
+	margin-top: 0px;
+	z-index: 1000;
+	position: relative;
+}
+#ui-datepicker-div::before, #ui-datepicker-div::after {
+	content:"";
+	display: block;
+	width: calc(50% - 5px);
+	height: 20px;
+	background: transparent;
+	position: absolute;
+	bottom: 20px;
+	z-index: 1;
+	box-shadow: 0px 15px 7px 0px rgba(0,0,0,0.4);
+	border-radius: 0;
+}
+#ui-datepicker-div::before {
+	left: 5px;
+	transform#the-form: rotate(-2deg);
+}
+#ui-datepicker-div::after {
+	right: 5px;
+	transform#the-form: rotate(2deg);
+}
+.ui-front {
+	z-index: 100;
+}
+
+/* Overlays */
+.ui-datepicker {
+	width: 17em;
+	padding: 0.25em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+	margin-top: 0px;
+}
+.ui-datepicker .ui-datepicker-header::after {
+	content: "/";
+	display: block;
+	position: absolute;
+	color: #666;
+	left: 48%;
+	bottom: 1.75em;
+	font-weight: 700;
+	top: 1em;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.875em;
+	height: 1.875em;
+	line-height: 1.875em;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 3px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 3px;
+}
+.ui-datepicker .ui-datepicker-prev::after,
+.ui-datepicker .ui-datepicker-next::after {
+	position: absolute;
+	display:block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #666;
+	top: 3px;
+	cursor: pointer;
+	font-family: "FontAwesome";
+	font-weight: 700;
+	font-size: 1.5em;
+}
+.ui-datepicker .ui-datepicker-prev::after {
+	content: "\f104";
+	left: 0px;
+}
+.ui-datepicker .ui-datepicker-next::after {
+	content: "\f105";
+	right: 0px;
+}
+
+.ui-datepicker .ui-datepicker-prev:hover::after,
+.ui-datepicker .ui-datepicker-next:hover::after {
+	color: #333;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: none;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	font-weight: bold;
+	margin: 1px 0;
+	border: none;
+	cursor: pointer;
+	height: 2em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	background-color: transparent;
+	background-image: url("../images/select_dark.png");
+	background-position: right center;
+	background-repeat: no-repeat;
+	color: #666;
+	padding: 0.1875em 2em 0.1875em 0.25em;
+	margin-top: 0.1875em;
+	margin-bottom: 0.1875em;
+	box-shadow: none;
+}
+.ui-datepicker select.ui-datepicker-month option,
+.ui-datepicker select.ui-datepicker-year option {
+	color: #666;
+}
+.ui-datepicker select.ui-datepicker-month option[selected],
+.ui-datepicker select.ui-datepicker-year option[selected] {
+	color: #666;
+}
+.ui-datepicker select.ui-datepicker-month {
+	margin-right: 20px;
+	
+}
+.ui-datepicker table {
+	position: relative;
+	display: block;
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+	background-color: #fff;
+	z-index: 2;
+	padding: 1em;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-color: #ccc;
+	border-radius: 0;
+	margin-top: 0.25em;
+	overflow: hidden;
+}
+.ui-datepicker table thead, .ui-datepicker table tbody {
+	display: table;
+	width: 100%;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: 0.5em;
+	text-align: right;
+	text-decoration: none;
+}
+/* Component containers
+----------------------------------*/
+.ui-widget {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 1em;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 1em;
+}
+.ui-widget-content {
+}
+.ui-widget-content a {
+	color: #666;
+}
+.ui-widget-header {
+	background-color: #eee;
+	color: #fff;
+	font-weight: normal;
+	border: solid 1px;
+	border-color: #ccc;
+}
+.ui-widget-header a {
+	color: #666;
+}
+.ui-widget-header a:hover {
+	padding: 0px;
+}
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	font-weight: normal;
+	background-color: #eee;
+	border-radius: 0;
+	text-align: left;
+	box-sizing: border-box;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	font-weight: normal;
+	color: #212121;
+	background-color: #ccc;
+}
+.ui-datepicker .ui-datepicker-prev.ui-state-hover, .ui-datepicker .ui-datepicker-next.ui-state-hover {
+	border: none;
+	background: none;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+	color: #212121;
+	text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #185670;
+	background-color: #ffffff;
+	font-weight: normal;
+	color: #212121;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #212121;
+	text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+	opacity: .7;
+	filter:Alpha(Opacity=70); /* support: IE8 */
+	font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	opacity: .35;
+	filter:Alpha(Opacity=35); /* support: IE8 */
+	background-image: none;
+}
+.ui-state-disabled .ui-icon {
+	filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
+}
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 4px;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+	opacity: .3;
+	filter: Alpha(Opacity=30); /* support: IE8 */
+}
+.ui-widget-shadow {
+	margin: -8px 0 0 -8px;
+	padding: 8px;
+	opacity: .3;
+	filter: Alpha(Opacity=30); /* support: IE8 */
+	border-radius: 0;
+}
+

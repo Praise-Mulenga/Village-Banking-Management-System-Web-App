@@ -1,0 +1,141 @@
+﻿/** Captcha Styles ***/
+
+.captchaField.default {
+	overflow: auto;
+	margin: 0 auto;
+}
+.captchaField.default .captchaFieldNumbers {
+	height: 44px;
+	padding: 0px 20px;
+	text-align: center;
+	background-image: url(../images/captcha/securityBg.jpg);
+}
+.captchaField.default .captchaFieldBoxLeft {
+	height: 73px;
+    width: 39px;
+    background-image: url(../images/captcha/capFrameLeft.png);
+    float: left;
+}
+.captchaField.default .captchaFieldBoxMid {
+	height: 73px;
+	padding: 14px 0 0 0;
+	float: left;
+	position: relative;
+}
+.captchaField.default .captchaFieldBoxMidOverlay {
+	width: 100%;
+	height: 73px;
+	padding: 14px 0 0 0;
+	background-image: url(../images/captcha/capFrameMid.png);
+	background-repeat: repeat-x;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.captchaField.default .captchaFieldBoxMidOverlaySecure {
+	width: 100%;
+	height: 44px;
+	margin: 14px 0 0 0;
+	background-image: url(../images/captcha/SO1.gif);
+	position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .25;
+}
+.captchaField.default .captchaFieldBoxRight {
+	height: 68px;
+	width: 78px;
+	padding: 5px 0 0 9px;
+	background-image: url(../images/captcha/capFrameRight.png);
+	float: left;
+}
+.captchaField.default .captchaFieldRefresh {
+	display: block;
+	height: 29px;
+	width: 34px;
+	padding: 5px 0 0 9px;
+	background-image: url(../images/captcha/capFrameBtn.png);
+	background-position: 0 0;
+	cursor: pointer;
+	float: left;
+}
+.captchaField.default .captchaFieldRefresh:hover {
+	background-position: -43px 0;
+}
+input#captchaAnswer {
+}
+/** Plain **/
+
+.captchaField.plain {
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+form#the-form .captchaField.plain::after {
+	content: "Refresh";
+	position: absolute;
+	bottom: 0px;
+	padding: 0.875em;
+	opacity: 0.75;
+	right: 0px;
+	z-index: 1;
+	height: auto;
+	width: auto;
+}
+.captchaField.plain .captchaFieldBoxRight {
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+.captchaField.plain .captchaFieldNumbers {
+	height: 44px;
+	padding: 0px 20px;
+	text-align: center;
+	background-image: url(../images/captcha/securityBg.jpg);
+	width:100%;
+	box-sizing:border-box;
+}
+.captchaField.plain .captchaFieldBoxLeft {
+	display:none;
+}
+.captchaField.plain .captchaFieldBoxMid {
+	height: 44px;
+	position: relative;
+}
+.captchaField.plain .captchaFieldBoxMidOverlay {
+	display:none;
+}
+.captchaField.plain .captchaFieldBoxMidOverlaySecure {
+	width: 100%;
+	height: 44px;
+	margin: 0;
+	background-image: url(../images/captcha/SO1.gif);
+	position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .25;
+}
+.captchaField.plain .captchaFieldRefresh {
+	position:absolute;
+	top:3px;
+	left:0;
+	display: block;
+	height: 44px;
+	width: 100%;
+	padding:0;
+	background-image: url(../images/captcha/spacer.gif);
+	background-position: 0 0;
+	cursor: pointer;
+    visibility: visible;
+}
+.captchaField.plain .captchaFieldRefresh:hover {
+	background-position: -43px 0;
+}
+@media screen and (max-width: 480px) {
+	.captchaField.plain::after {
+		content: none;
+	}
+}

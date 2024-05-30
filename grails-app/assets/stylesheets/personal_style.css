@@ -1,0 +1,185 @@
+body{
+	background: ;
+	color: white;
+	width: 100%;
+	text-align: center;
+
+}
+
+
+nav{
+    width: auto;
+    padding:0;
+    margin-left: -15px;
+    margin-top: -15px;
+    background: #151719;
+	color: #C70039;
+	
+	
+}
+li{
+	list-style: none;
+}
+.submit{
+	justify-content: center;
+	align-items: center;
+	position: ;
+	margin-left: -50px;
+}
+.submit li{
+	display: inline-block;
+}
+.submit .btn2{
+	text-decoration: none;
+	margin-top: 10px;
+	text-align: center;
+	justify-content: center;
+    margin-left: 20px;
+	background: rgb(13, 226, 13);
+	border-radius: 10px;
+	border: 1px solid silver;
+	padding: 20px;
+	border: none;
+	color: white;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 15px;
+	width: 90%;
+	display: flex;
+}
+nav ul{
+	height: 400px;
+	padding: 0;
+	border: 1px solid red;
+	background: #151719;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: 1px solid red;
+}
+nav ul li a{
+	text-decoration: none;
+	display: inline-block;
+	margin-left:;
+	margin-top: -20px;
+	color: silver;
+
+}
+nav ul li{
+	border: 1px solid white;
+	margin-left: 20px;
+	padding: 10px 10px;
+	height:;
+}
+ section{
+ 	
+  	width: 100%;
+  	height: 100%;
+    margin-top: px;
+
+
+ 	
+ }
+
+ #wrapper{
+ 	display: inline-block;
+ 	border: 2px solid white;
+ 	border-radius: 5px;
+ 	text-align: center;
+ 	box-shadow: 30px;
+ 
+ 	background: #042331;
+ 	margin-left: 50px;
+ 	width: 300px;
+ 	height: 250px;
+ }
+
+
+
+#wrapper:hover{
+	background: #151719;
+	
+
+}
+#wrapper a:hover{
+	
+	color: red;
+}
+ div #container{
+    display: flex;
+ 	margin-left: px;
+ }
+
+ .btn{
+ 	text-decoration: none;
+	margin-top: 10px;
+	text-align: center;
+	justify-content: center;
+    margin-left: 20px;
+	background: rgb(170, 0, 0);
+	border-radius: 10px;
+	border: 1px solid silver;
+	padding: 20px;
+	border: none;
+	color: white;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 15px;
+	width: 70%;
+	display: flex;
+ }
+
+ #btn:hover{
+ 	cursor: pointer;
+ }
+section input{
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 100%;
+}
+.info input{
+	padding: 10px;
+	outline: none;
+}
+#DropOp{
+	width: 100%;
+
+}
+
+.info{
+	
+	width: 100%;
+	text-align: center;
+	
+
+}
+
+
+.info p{
+	color: red;
+	padding: 0;
+	display: flex;
+	margin-left: -50px;
+	text-align: ;
+	position: absolute;
+	margin-top: 20vh;
+	font-size: 20px;
+	font-family: mosnospace, sans-serif;
+	
+	
+	
+}
+
+
+.info p a{
+	text-decoration: none;
+   padding: 100px 100px;
+   background:;
+	color: white;
+   text-align: center;
+	padding: ;
+}

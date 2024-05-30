@@ -1,0 +1,575 @@
+/* Online Banking 1.11.0 by JP Larson, Copyright 2021 Fiserv. All rights reserved. */
+#login:not(.personal) .personal,
+#login:not(.business) .business,
+#login:not(.other) .other {
+    display: none;
+}
+
+#login,
+#login form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#login {
+    /*background-color: #eee;
+    padding: 2em 2em;*/
+    box-sizing: border-box;
+    width: 20em;
+    font-size: 1rem;
+    position: relative;
+    z-index: 340;
+    align-content: center;
+}
+
+@media only screen and (min-width: 670px) {
+    #login {
+        font-size: 1rem;
+    }
+}
+
+#login form {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+#login h2 {
+    width: 100%;
+    margin-top: 0;
+}
+
+#login label {
+    flex-grow: 1;
+    margin: 0.25em 0;
+    border-right: solid 1px #eee;
+    position: relative;
+    line-height: inherit;
+    box-sizing: border-box;
+    font-size: inherit;
+    box-shadow: none !important;
+}
+
+#login form label {
+    width: 51%;
+}
+
+#login label,
+#login form [class*=Button] {
+    height: 3.1em;
+}
+
+#login form [class*=Button] {
+    border: none;
+    margin: 0.25em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aaa;
+    font-size: 1em;
+    padding: 0 2.75em;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+#login form [class*=Button]:hover {
+    background-color: #ccc;
+}
+
+#login label span {
+    display: none;
+}
+
+#login input:not([type=radio]):not([type=checkbox]),
+#login select {
+    border: none;
+    width: 100%; /* Comment out if not using lable > input structure*/
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 0 1em;
+    background-color: #fff;
+    height: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    transition: background-color 0.25s ease;
+    border: solid 1px rgba(204, 204, 204, 1);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#login label .error {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    z-index: -1;
+}
+
+select::-ms-value {
+    background: none;
+    color: inherit;
+}
+
+#login select::-ms-expand {
+    display: none;
+}
+
+#login input:not([type=radio]):not([type=checkbox]):focus {
+    background-color: #eee;
+}
+
+#login ul {
+    display: flex;
+    list-style: none;
+    padding: 5px;
+    width: 100%;
+}
+
+#login ul li {
+    margin: 0 1em 0 0;
+    list-style-type: none;
+}
+
+#login ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #333;
+}
+
+#login ::-moz-placeholder { /* Firefox 19+ */
+    color: #333;
+}
+
+#login :-ms-input-placeholder { /* IE 10+ */
+    color: #333;
+}
+
+#login :-moz-placeholder { /* Firefox 18- */
+    color: #333;
+}
+
+#login fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 -0.5em 0.5em -0.5em;
+    padding: 0.5em;
+    display: block;
+    position: relative;
+    flex-grow: 1;
+}
+
+#login fieldset legend {
+    display: block;
+    margin-bottom: 0.5em;
+    float: left;
+    width: 100%;
+}
+
+#login fieldset label {
+    border: none;
+    width: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    height: auto;
+    margin-right: 1em;
+    overflow: hidden;
+    cursor: pointer;
+    clear: both;
+}
+
+#login fieldset label:last-child {
+    margin-right: 0;
+}
+
+#login input[type=radio] {
+    position: absolute;
+    left: -12em;
+    top: -12em;
+    visibility: hidden;
+}
+
+#login input[type=radio] + span::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    display: inline-flex;
+    border-radius: 50%;
+    border: solid 2px #666;
+    margin-right: 0.5em;
+    transition: background-color 0.25s ease;
+}
+
+#login input[type=radio]:checked + span::before {
+    background-color: #666;
+}
+
+#login input[type=checkbox] + span,
+#login input[type=radio] + span {
+    display: block;
+}
+
+#login .validation {
+    display: none !important;
+}
+
+#login label:last-of-type input:not([type=radio]):not([type=checkbox]) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 0;
+}
+
+#login label {
+    border: none;
+}
+
+#login input + span[class*=fa-],
+#login select + span[class*=fa-] {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    right: 0.5em;
+    top: 0;
+    align-items: center;
+    font-size: 1.5em;
+    pointer-events: none;
+}
+
+#login.loading {
+    pointer-events: none;
+}
+
+#login .spinner {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.75);
+    z-index: 12;
+    border-radius: inherit;
+    padding: inherit;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#login .spinner,
+#login .spinner::after {
+    transition: opacity 0.25s 0s ease;
+    opacity: 0;
+}
+
+#login.loading .spinner {
+    opacity: 1;
+}
+
+#login.loading .spinner::after {
+    opacity: 0.75;
+}
+
+#login .spinner::after {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#login .spinner::after {
+    content: "";
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: solid 0.25em rgba(170, 170, 170, 0.5);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    animation-name: spinner;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 4;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+        border-width: 1.5em;
+    }
+
+    50% {
+        border-width: 0.25em;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-width: 1.5em;
+    }
+}
+
+/* Border Radius */
+#login.rounded-corners,
+#login.rounded-corners.horizontal fieldset ~ form label:first-child input:not([type=radio]):not([type=checkbox]),
+#login.rounded-corners input:not([type=radio]):not([type=checkbox]),
+#login.rounded-corners select,
+#login.rounded-corners [class*=Button],
+#login.rounded-corners label .error {
+    border-radius: 0.5em; /*Change the border-radius here. */
+}
+
+#login.rounded-corners label .error,
+#login.rounded-corners fieldset .error {
+    border-top: solid 2.5rem transparent;
+    transform: translateY(-2.5rem);
+}
+
+#login.rounded-corners form:not(.error) [class*=Button],
+#login.rounded-corners.horizontal form.error [class*=Button] {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#login.rounded-corners.horizontal fieldset ~ form label:first-child input:not([type=radio]):not([type=checkbox]) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+/* Hide Password */
+#login.hide-password form label + label {
+    display: none;
+}
+
+#login.hide-password form label.valid + label {
+    display: flex;
+}
+
+#login.hide-password label:not(.valid) input:not([type=radio]):not([type=checkbox]) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 0;
+}
+
+/* Horizontal Layout */
+@media (min-width: 768px) {
+    #login.horizontal {
+        width: auto;
+        flex-direction: row;
+    }
+
+    #login.horizontal label {
+        width: 10em;
+    }
+
+    #login.horizontal form {
+        flex-grow: 2;
+        flex-wrap: nowrap;
+        width: 24em;
+    }
+
+    #login.horizontal fieldset {
+        margin-right: 0.5em;
+        flex-grow: 0;
+        max-width: 24em;
+    }
+
+    #login.horizontal input:not([type=radio]):not([type=checkbox]) {
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+
+    #login.horizontal label + label input:not([type=radio]):not([type=checkbox]),
+    #login.horizontal fieldset ~ form label:first-child input:not([type=radio]):not([type=checkbox]) {
+        border-left-width: 1px;
+    }
+
+    #login.horizontal.rounded-corners form input:not([type=radio]):not([type=checkbox]) {
+        border-radius: 0;
+    }
+
+    #login.horizontal.rounded-corners select {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+/* Error and Direct Login*/
+#login form:not(.error) > .error,
+#login form.error > label,
+#login form.error > [class*=Button] {
+    display: none !important;
+}
+
+#login form > .error {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+#login form.error .error [class*=Button] {
+    flex-grow: 1;
+}
+
+#login form .error .message {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: rgba(255,255,255,0.9);
+    margin: 0;
+    padding: 1.5em;
+    font-size: 1.25em;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+#login:not(.loading) form.error.message .error .message {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media (min-width: 768px) {
+    #login.horizontal form.error {
+        flex-grow: 0;
+        width: auto;
+    }
+} 
+
+/* Validate Form 1.4.2 by JP Larson, Copyright 2020 Fiserv. All rights reserved. */
+.validate-form label,
+.validate-form fieldset {
+    position: relative;
+}
+
+.validate-form label .error,
+.validate-form fieldset .error {
+    display: flex !important;
+    content: "Please fill out this field.";
+    font-size: 0.75em;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: block;
+    z-index: 10;
+    background-color: #666;
+    padding: 1em;
+    box-sizing: border-box;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.validate-form :invalid {
+    box-shadow: none;
+}
+
+.validate-form .invalid {
+    box-shadow: inset 0 0 0 2px #666 !important;
+    z-index: 100;
+    animation-name: slideShake;
+    animation-iteration-count: 2;
+    animation-duration: 0.0833s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 900;
+}
+
+.validate-form .invalid .error {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.validate-form .validation {
+    display: flex !important;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: rgb(255, 102, 0);
+    font-size: 0.75em;
+    padding: 0.25em 0.5em 0.25em 0.25em;
+    opacity: 0.5;
+    transition: opacity 0.25s ease;
+    z-index: 346;
+    align-items: center;
+    align-content: center;
+    margin: 0;
+}
+
+.validate-form .validation:hover {
+    opacity: 1;
+}
+
+.validate-form .validation::before {
+    display: block;
+    font-family: 'FontAwesome';
+}
+
+.validate-form .validation::after {
+    display: block;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.25s ease, margin 0.25s ease;
+}
+
+.validate-form .validation:hover::after {
+    max-width: 5em;
+    margin-left: 0.25em;
+}
+
+.validate-form .required .validation::before {
+    content: "\f06a";
+}
+
+.validate-form .required .validation::after {
+    content: "Required";
+}
+
+.validate-form .valid .validation::before {
+    content: "\f058";
+}
+
+.validate-form .valid .validation::after {
+    content: "Completed";
+}
+
+.validate-form .valid .validation {
+    color: rgb(102, 102, 102);
+}
+
+.validate-form fieldset label .validation,
+.validate-form fieldset label .error {
+    display: none !important;
+}
+
+@keyframes slideShake {
+    0% {
+        transform: translateX(0em);
+    }
+
+    25% {
+        transform: translateX(-0.125em);
+    }
+
+    75% {
+        transform: translateX(0.125em);
+    }
+
+    100% {
+        transform: translateX(0em);
+    }
+} 
+

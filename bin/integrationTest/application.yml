@@ -50,10 +50,10 @@ grails:
       - text/xml
       - application/xml
 dataSource:
-  url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-  driverClassName: org.h2.Driver
-  username: sa
-  password: ''
+  url: jdbc:mysql://localhost/village_banking_management_system
+  driverClassName: "com.mysql.cj.jdbc.Driver"
+  username: root
+  password: 'praise@mysql2023'
   pooled: true
   jmxExport: true
   dbCreate: update
@@ -62,3 +62,4 @@ hibernate:
     queries: false
     use_second_level_cache: false
     use_query_cache: false
+    allow_update_outside_transaction: true

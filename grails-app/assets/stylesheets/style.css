@@ -1,0 +1,62 @@
+body{
+	background:url("bg4.jpg");
+	color: white;
+	font-family: sans-serif, monospace;
+}
+form ul{
+	list-style: none;
+}
+form ul li{
+	padding: 10px;
+}
+form{
+	border: 1px solid red;
+	justify-content: center;
+	position: center;
+	text-align: center;
+	width: 40%;
+	height: 50vh;
+	margin-top: 20vh;
+}
+
+a{
+	text-decoration: none;
+	padding: 10px;
+	color: white;
+	background: #00AA00;
+	border: 1px solid green;
+}
+
+#container{
+	justify-content: center;
+	background-image: url("bg3.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	position: center;
+	display: flex;
+
+	height: 80vh;
+	border: 1px solid green;
+}
+
+ul li input{
+	width: 50%;
+	padding: 10px;
+}
+#container h2{
+
+}
+
+.header{
+	margin-top: 20vh;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+#container h1{
+	padding: 30px;
+	margin-top: 20vh;
+	margin-left: ;
+}
