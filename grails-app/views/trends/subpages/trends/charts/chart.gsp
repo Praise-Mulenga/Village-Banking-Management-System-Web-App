@@ -23,33 +23,28 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-      const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('myChart');
+    const savingsData = ${raw(savingsList.collect { it.amountSaved })};
     new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'Novermber', 'December'],
-          datasets: [{
-            label: 'Amount of Money Saved',
-            backgroundColor: 'rgb(255, 99, 132)',
-            
-            <g:each in="${savingsList}" var="saving">
-            data: [${saving.amountSaved}],
-            </g:each>
-
-            borderWidth: 1
-                    }]
-              },
-              options: {
-                scales: {
-                  y: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                label: 'Amount of Money Saved',
+                backgroundColor: 'rgb(255, 99, 132)',
+                data: savingsData,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
                     beginAtZero: true
-                     }
-                    }
                 }
-            });
-        
+            }
+        }
+    });
 </script>
 
 </body>
